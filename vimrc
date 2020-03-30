@@ -229,11 +229,11 @@ set nrformats=
 
 " 相对行号: 行号变成相对，可以用 nj/nk 进行跳转
 " set relativenumber number
-au FocusLost * :set norelativenumber number
-au FocusGained * :set relativenumber
+" au FocusLost * :set norelativenumber number
+" au FocusGained * :set relativenumber
 " 插入模式下用绝对行号, 普通模式下用相对
-autocmd InsertEnter * :set norelativenumber number
-autocmd InsertLeave * :set relativenumber
+" autocmd InsertEnter * :set norelativenumber number
+" autocmd InsertLeave * :set relativenumber
 function! NumberToggle()
   if(&relativenumber == 1)
     set norelativenumber number
@@ -577,10 +577,10 @@ nnoremap <Down> j
 
 " 具体编辑文件类型的一般设置，比如不要 tab 等
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
-autocmd FileType ruby,javascript,html,css,xml set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
-autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown set filetype=markdown.mkd
-autocmd BufRead,BufNewFile *.part set filetype=html
-autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
+" autocmd FileType ruby,javascript,html,css,xml set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
+"" autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown set filetype=markdown.mkd
+" autocmd BufRead,BufNewFile *.part set filetype=html
+" autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
 
 " disable showmatch when use > in php
 au BufWinEnter *.php set mps-=<:>
@@ -607,8 +607,9 @@ function! AutoSetFileHead()
 
     "如果文件类型为python
     if &filetype == 'python'
-        " call setline(1, "\#!/usr/bin/env python")
-        call setline(1, "\# -*- coding: utf-8 -*-")
+        call setline(1, "\#!/usr/bin/env python")
+        call append(1, "\# -*- coding: utf-8 -*-")
+
         call append(1, "\# author: yveswang")
     endif
 
