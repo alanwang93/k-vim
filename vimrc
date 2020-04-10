@@ -92,7 +92,7 @@ set noswapfile
 set wildignore=*.swp,*.bak,*.pyc,*.class,.svn
 
 " 突出显示当前列
-" set cursorcolumn
+set cursorcolumn
 " 突出显示当前行
 set cursorline
 
@@ -660,13 +660,17 @@ endif
 
 " theme主题
 set term=xterm-256color
-set background=light
 set t_Co=256
-let g:solarized_termcolors=256
-
 " colorscheme solarized
 " colorscheme molokai
-colorscheme onedark
+" colorscheme onedark
+colorscheme one
+set background=dark " for the dark version
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
+highlight CursorLine guibg=237 ctermbg=237
+highlight CursorColumn guibg=237 ctermbg=237
+
 
 
 " 设置标记一列的背景颜色和数字一行颜色一致

@@ -141,6 +141,7 @@ Plug 'altercation/vim-colors-solarized'
 " 主题 molokai
 Plug 'tomasr/molokai'
 Plug 'joshdick/onedark.vim'
+Plug 'rakr/vim-one'
 
 " nav
 " nerdtree nerdtreetabs
@@ -678,6 +679,8 @@ endif
     let g:airline_right_alt_sep = '❮'
     let g:airline_symbols.linenr = '¶'
     let g:airline_symbols.branch = '⎇'
+    let g:airline_theme='one'
+
     " 是否打开tabline
     " let g:airline#extensions#tabline#enabled = 1
 " }}}
