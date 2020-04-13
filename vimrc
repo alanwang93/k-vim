@@ -103,9 +103,9 @@ set t_ti= t_te=
 
 
 " 鼠标暂不启用, 键盘党....
-set mouse-=a
+" set mouse-=a
 " 启用鼠标
-" set mouse=a
+set mouse=a
 " Hide the mouse cursor while typing
 " set mousehide
 
@@ -609,7 +609,7 @@ function! AutoSetFileHead()
     if &filetype == 'python'
         call setline(1, "\#!/usr/bin/env python")
         call append(1, "\# -*- coding: utf-8 -*-")
-        call append(1, "\# author: yveswang")
+        call append(2, "\# author: yveswang")
     endif
 
     normal G
